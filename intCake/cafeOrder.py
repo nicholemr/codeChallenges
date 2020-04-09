@@ -10,6 +10,7 @@ def is_first_come_first_served(takeout, dinein, served):
         else:
             check.append(dinein[0])
             dinein.pop(0)
+
     check += takeout + dinein
     # print(check)
 

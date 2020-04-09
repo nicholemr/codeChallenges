@@ -11,10 +11,6 @@ def check_permutation(str1, str2):
     for char in str1:
 
         str1_d[char] = str1_d.get(char, 0) + 1
-        # if str1_d.get(char):
-        #     str1_d[char] += 1
-        # else:
-        #     str1_d[char] = 1
 
     for char in str2:
         if str1_d.get(char) and str1_d.get(char) > 0:

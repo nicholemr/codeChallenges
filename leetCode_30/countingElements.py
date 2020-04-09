@@ -3,16 +3,13 @@ class Solution:
         el_count = set()
         res = 0
 
-        # for el in arr:
-        #     el_count.add(el)
-
         [el_count.add(el) for el in arr]
 
         for el in arr:
             if el+1 in el_count:
                 res += 1
 
-        print(res)
+        # print(res)
         return res
 
 

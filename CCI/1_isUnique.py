@@ -14,15 +14,15 @@ def unique(str):
 # without additional data structure:
 
 
-# def unique(str):
-#     for char in str:
-#         count = 0
-#         for letter in str:
-#             if char == letter:
-#                 count += 1
-#         if count > 1:
-#             return False
-#     return True
+def unique(str):
+    for char in str:
+        count = 0
+        for letter in str:
+            if char == letter:
+                count += 1
+        if count > 1:
+            return False
+    return True
 
 
 class Test(unittest.TestCase):
