@@ -15,7 +15,7 @@ class Solution:
                 s = s[-amount:] + s[:-amount]
             else:
                 s = s[amount:] + s[:amount]
-            print(s)
+        return s
 
 
 sol = Solution()
