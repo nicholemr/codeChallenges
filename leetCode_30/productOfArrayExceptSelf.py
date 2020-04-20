@@ -17,7 +17,6 @@ class Solution:
         while i >= 0:
             resf.append(res[i])
             i -= 1
-        print(resf)
         return resf
 
 

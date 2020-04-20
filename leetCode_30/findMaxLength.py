@@ -9,7 +9,7 @@
 # Output: 2
 # Explanation: [0, 1] (or [1, 0]) is a longest contiguous subarray with equal number of 0 and 1.
 # Input:
-# [0,0,1,0,0,0,1,1] 
+# [0,0,1,0,0,0,1,1]
 # Expected:
 # 6
 # Input:
@@ -22,7 +22,6 @@
 
 class Solution:
     def findMaxLength(self, nums):
-        
 
 
 sol = Solution()
