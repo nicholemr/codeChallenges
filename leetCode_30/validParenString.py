@@ -1,44 +1,53 @@
 class Solution:
-    def checkValidString(self, s: str) -> bool:
-
+    def checkValidString(self, s):
+        s = list(s)
+        ast = []
         stack = []
-        for char in s:
-            if char == '(' or char == '*':
-                stack.append(char)
-            elif char == ')':
+
+        for i, item in enumerate(s):
+            if item == '*' or item == '(':
+                stack.append(item)
+            if item == ')':
                 if '(' in stack:
-                    for i, item in enumerate(stack):
-                        if item == '(':
-                            stack.pop(i)
-                            break
+                    stack = self.removechar(stack, '(')
                 elif '*' in stack:
-                    for i, item in enumerate(stack):
-                        if item == '*':
-                            stack.pop(i)
-                            break
+                    stack = self.removechar(stack, '*')
                 else:
                     return False
-        if '(' in stack:
-            res = []
-            for i in stack:
-                if i == '(':
-                    res.append(i)
-                elif i == '*':
-                    if res:
-                        res.pop()
-        else:
+        if '(' not in stack:
+            return True
+        print(stack)
+        last_stack = []
+        for item in stack:
+            if item == '(':
+                last_stack.append(item)
+            elif item == '*':
+                if '(' in last_stack:
+                    last_stack.remove('(')
+
+        if '(' not in last_stack:
             return True
 
-        if '(' in res:
-            return False
-        return True
+        return False
+
+    def removechar(self, arr, char):
+        new_arr = []
+        last_i = len(arr)-1
+
+        for i in range(last_i, -1, -1):
+            if arr[i] == char:
+                arr.pop(i)
+                break
+        return arr
 
 
 s = "()"
 s = '(*)'
-s = '(*))'
-s = "(*()"
+# s = '(*))'
+# s = "(*()"
 # s = '((()*)))'
 # s = '((*))'
+# s = "(((******))"
+s = "*()(())*()(()()((()(()()*)(*(())((((((((()*)(()(*)"
 sol = Solution()
 print(sol.checkValidString(s))
